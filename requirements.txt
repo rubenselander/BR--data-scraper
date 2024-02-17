@@ -1,0 +1,6 @@
+requests
+ipykernel
+pyarrow
+pandas
+urllib3
+lxml

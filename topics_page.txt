@@ -1,0 +1,191 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+
+
+
+<html lang="sv">
+<head>
+  <meta http-equiv="Content-Type" content="text/html">
+  <meta http-equiv="Content-Style-Type" content="text/css2">
+
+  <title>Gör dina egna diagram</title>
+  <meta name="DC.Description"	content="Brottsförebyggande rådet, BRÅ, är en myndighet under justitiedepartementet. BRÅ:s huvuduppgift är att främja brottsförebyggande arbete genom utveckling, utvärdering, forskning och information inom det kriminalpolitiska området. BRÅ ansvarar också för Sveriges officiella rättsstatistik (kriminalstatistik, brottsstatistik, lagföringsstatistik). BRÅ är ett centrum för kunskap om brott.">
+  <meta name="Keywords" content="brott, brottsling, gärningsman, brottsutveckling, rättsstatistik, brottsstatistik, kriminologi, kriminologer, kriminologisk forskning">
+
+
+  <link rel="stylesheet" type="text/css" href="../sol.css">
+  <link rel="stylesheet" type="text/css" href="../start.css">
+
+  <script type="text/javascript">
+  <!--
+
+function init()
+{
+}
+
+  -->
+  </script>
+</head>
+<body class="body_base" onLoad="init()">
+<div id="basestart">
+  <div id="vanster">
+    <div><a href="hjalp?kod=h_sokning" target="hjalpwin"><a href="hjalp?kod=h_sokning" target="hjalpwin">Information om<br>denna tjänst.</a>
+</a></div>
+    <div><a href="http://bra.se/brott-och-statistik/kriminalstatistik/tolka-statistiken.html" target="hjalpwin">Tolka<br>statistiken.</a>
+</div>
+    <div><a href="hjalp?kod=h_tabell" target="hjalpwin"><a href="hjalp?kod=h_tabell" target="hjalpwin">Hjälp att göra<br>egen tabell.</a>
+</a></div>
+    <div><a href="hjalp?kod=h_diagram" target="hjalpwin"><a href="hjalp?kod=h_diagram" target="hjalpwin">Hjälp att göra<br>eget diagram.</a>
+</a></div>
+  </div>
+  <div id="main">
+  <div id="start">
+
+
+    <div id="rubrik">
+      <span class="rubrik">Gör din egen tabell över anmälda brott</span>      
+    </div>
+    <table id="info">
+      <tr>
+        <td id="infotext">
+           När du samtidigt väljer små områden (kommuner eller stadsområden) och korta perioder (månader eller kvartal) har du av sekretesskäl inte samma valmöjligheter som när du väljer större områden och längre perioder.
+        </td>
+        <td id="infobild">
+          <img src="../images/sv/gemensam/tabell.gif" alt="Bild, statistiktabell!">
+        </td>
+      </tr>
+    </table>
+
+  </div>
+
+  <div id="meny">
+<ol>
+<li class="menyRubrik">
+Ny polisorganisation</li>
+<li class="menyText">
+Från och med 1 januari 2015 har polisen omorganiserats vilket innebär att de 21 länspolismyndigheterna har upphört och istället  har en polismyndighet indelad i sju polisregioner bildats. Från och med 2015 redovisas statistiken efter de sju regionerna istället för län.</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyRubrik">
+Sök utifrån brottstyp (inbrott, misshandel etc):</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=98"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Land och län 1975-2014, land och region 2015-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Polisregion Nord under år 2015?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=101"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Kommun och storstädernas stadsområden 1996-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Malmö kommun under år 2014?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=31"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Land, län, kommun och storstädernas stadsområden 1975-2014</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Västerås kommun år 2003 eller under perioden 2000-2002?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=34"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Månads- och kvartalsvis - Land och län 1975-2014, land och region 2015-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), nedbrutet i månader och kvartal. Till exempel: Hur många bostadsinbrott anmäldes i Polisregion Nord under månad januari?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=90"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Månads- och kvartalsvis - Kommun och storstädernas stadsområden 1996-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm, nedbrutet i månader och kvartal. Till exempel: Hur många bostadsinbrott anmäldes i Malmö kommun under första kvartalet år 2015?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=37"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Månads- och kvartalsvis - Land, län, kommun och storstädernas stadsområden 1975-2014</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm, nedbrutet i månader och kvartal (t.o.m. 2014). Till exempel: Hur många bostadsinbrott anmäldes i Västerås kommun varje månad under året 2014?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyRubrik">
+Sök utifrån brottskod (sifferkod som används för att kategorisera brott):</li>
+<li class="menyRubrikLiten">
+I första hand rekommenderas sökning utifrån brottstyp, i stället för brottskod. Sökning utifrån brottskod kräver insikt i hur brottstypssystemet fungerar, och för att få ett korrekt resultat krävs att du har kännedom om vilka brottskoder en brottstyp bygger på under olika perioder. Till exempel är brottstyperna ofta sammansatta av flera koder, och av dessa kan en del ha förändrats över tid.</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=104"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Land och län 1975-2014, land och region 2015-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), under ett visst år eller en viss period av år. Till exempel: Hur många brott anmäldes med brottskod 3002 i hela Sverige under perioden 2005-2010?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=107"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Kommun och storstädernas stadsområden 1996-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många brott med brottskod 9801 anmäldes i Göteborgs kommun under år 2015?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=43"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Årsvis - Land, län, kommun och storstädernas stadsområden 1975-2014</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm. Till exempel: Hur många brott med brottskod 0401 anmäldes i Västerås kommun år 2002?</li>
+<li class="menyTomrad">
+&nbsp;</li>
+<li class="menySol">
+<a href="anmalda/urval/urval;jsessionid=mTxn6IGnp7PYGKdzZQJODkrd?menyid=46"><span class="knapp">&raquo;</span>&nbsp;<span class="menytext">Månads- och kvartalsvis - Land och län 1975-2014, land och region 2015-</span></a></li>
+<li class="menyText">
+För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), nedbrutna på månader och kvartal. Av sekretesskäl visas inte månadsvis statistik på kommun- och stadsområdesnivå. Till exempel: Hur många brott med brottskod 1208 anmäldes under juni månad år 2015 i Polisregion Stockholm?</li>
+</ol>
+
+  </div>
+  <div id="sidfot">
+  <div id="contact_info">
+    <div id="logo_and_name">
+      <img src="../../../images/sv/gemensam/logo_small.gif" width="36" height="17" alt="Brå" title="Brå" class="logo">
+      <strong>Brottsförebyggande rådet (Brå)</strong>
+    </div>
+    <div id="address">
+      Postadress: Box 1386, 111 93 Stockholm<br>
+      Telefon: 08-527 58 400 | Fax: 08-411 90 75<br>
+      <span>E-post: <a href="mailto:statistik%40bra.se" title="statistik%40bra.se">statistik@bra.se</a> | Besöksadress: Tegnérgatan 23, 2 tr<span class="noprint"> | <a href="../../../images/sv/gemensam/bra_karta01.gif" title="Karta" target="sol_main">Karta</a></span></span><br>
+      <span><a href="https://www.bra.se/download/18.7d27ebd916ea64de5306c04a/1600696785394/Tillganglighetsredogorelse-SOL.pdf" title="Tillgänglighetsredogörelse" target="sol_main">Tillgänglighetsredogörelse</a></span>  
+    </div>
+  </div>
+</div>
+
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,62 @@
+[
+    {
+        "id": "31",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=31",
+        "name": "Årsvis - Land, län, kommun och storstädernas stadsområden 1975-2014",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Västerås kommun år 2003 eller under perioden 2000-2002?"
+    },
+    {
+        "id": "34",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=34",
+        "name": "Månads- och kvartalsvis - Land och län 1975-2014, land och region 2015-",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), nedbrutet i månader och kvartal. Till exempel: Hur många bostadsinbrott anmäldes i Polisregion Nord under månad januari?"
+    },
+    {
+        "id": "37",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=37",
+        "name": "Månads- och kvartalsvis - Land, län, kommun och storstädernas stadsområden 1975-2014",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm, nedbrutet i månader och kvartal (t.o.m. 2014). Till exempel: Hur många bostadsinbrott anmäldes i Västerås kommun varje månad under året 2014?"
+    },
+    {
+        "id": "43",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=43",
+        "name": "Årsvis - Land, län, kommun och storstädernas stadsområden 1975-2014",
+        "description": "För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län, i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm. Till exempel: Hur många brott med brottskod 0401 anmäldes i Västerås kommun år 2002?"
+    },
+    {
+        "id": "46",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=46",
+        "name": "Månads- och kvartalsvis - Land och län 1975-2014, land och region 2015-",
+        "description": "För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), nedbrutna på månader och kvartal. Av sekretesskäl visas inte månadsvis statistik på kommun- och stadsområdesnivå. Till exempel: Hur många brott med brottskod 1208 anmäldes under juni månad år 2015 i Polisregion Stockholm?"
+    },
+    {
+        "id": "90",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=90",
+        "name": "Månads- och kvartalsvis - Kommun och storstädernas stadsområden 1996-",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm, nedbrutet i månader och kvartal. Till exempel: Hur många bostadsinbrott anmäldes i Malmö kommun under första kvartalet år 2015?"
+    },
+    {
+        "id": "98",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=98",
+        "name": "Årsvis - Land och län 1975-2014, land och region 2015-",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Polisregion Nord under år 2015?"
+    },
+    {
+        "id": "101",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=101",
+        "name": "Årsvis - Kommun och storstädernas stadsområden 1996-",
+        "description": "För dig som letar statistik utifrån brottstyper och vill få reda på antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många bostadsinbrott anmäldes i Malmö kommun under år 2014?"
+    },
+    {
+        "id": "104",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=104",
+        "name": "Årsvis - Land och län 1975-2014, land och region 2015-",
+        "description": "För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i hela Sverige, i län (t.o.m. 2014) eller i region (fr.o.m. 2015), under ett visst år eller en viss period av år. Till exempel: Hur många brott anmäldes med brottskod 3002 i hela Sverige under perioden 2005-2010?"
+    },
+    {
+        "id": "107",
+        "url": "https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid=107",
+        "name": "Årsvis - Kommun och storstädernas stadsområden 1996-",
+        "description": "För dig som letar statistik utifrån brottskoder. Här kan du få reda på uppgifter om antal anmälda brott i kommuner eller i stadsområdena i Göteborg, Malmö och Stockholm under ett visst år eller en viss period av år. Till exempel: Hur många brott med brottskod 9801 anmäldes i Göteborgs kommun under år 2015?"
+    }
+]
