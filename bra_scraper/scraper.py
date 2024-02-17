@@ -106,22 +106,32 @@ def get_pending_requests(topic_id: int = None) -> list[dict]:
     """
     with sqlite3.connect(db_path) as conn:
         if topic_id:
-            return conn.execute(
+            requests_remaining = conn.execute(
                 """
-                SELECT payload
+                SELECT payload, request_id, topic_id
                 FROM Requests
                 WHERE topic_id = ? AND status = 'Pending'
                 """,
                 (topic_id,),
             ).fetchall()
         else:
-            return conn.execute(
+            requests_remaining = conn.execute(
                 """
-                SELECT payload
+                SELECT payload, request_id, topic_id
                 FROM Requests
                 WHERE status = 'Pending'
                 """
             ).fetchall()
+
+        request_dicts = [
+            {
+                "payload": json.loads(payload),
+                "request_id": request_id,
+                "topic_id": topic_id,
+            }
+            for payload, request_id, topic_id in requests_remaining
+        ]
+        return request_dicts
 
 
 def update_request_status(request_id: int, status: str):
@@ -249,17 +259,18 @@ def combine_and_deduplicate_csv(csv_strings, output_path):
             writer.writerow(row)
 
 
-import requests
+def is_valid_csv(input, separator=";"):
+    # Check if the input is a non-empty string
+    if not isinstance(input, str):
+        try:
+            input_string = input.text
+        except Exception as e:
+            logging.error(f"Invalid input: {e}")
+            return False
+    else:
+        input_string = input
 
-
-def is_valid_csv(response, separator=";"):
-    # Check if the input is a valid requests.Response object and not empty
-    if not response or not isinstance(response, requests.Response) or not response.text:
-        return False
-
-    # Use response.text to work with the actual content
-    content = response.text
-    lines = content.split("\n")
+    lines = input_string.strip().split("\n")
 
     # Ensure there are at least two lines to check
     if len(lines) < 2:
@@ -270,7 +281,7 @@ def is_valid_csv(response, separator=";"):
     separator_count_second_line = lines[1].count(separator)
 
     if (
-        separator_count_first_line > 1
+        separator_count_first_line > 0
         and separator_count_first_line == separator_count_second_line
     ):
         return True
@@ -279,6 +290,14 @@ def is_valid_csv(response, separator=";"):
 
 
 def save_response_async(request_id: int, response: requests.Response):
+    """Saves the response to the database asynchronously.
+    :param request_id (int): The request ID.
+    :param response (requests.Response): The response.
+    """
+    logging.info(f"Saving response for request {request_id}")
+    # logg the content of the response
+    logging.info(f"Response content: {response.text}")
+
     def save_response(request_id: int, response: requests.Response):
         sql_query = None
         query_params = None
@@ -286,9 +305,10 @@ def save_response_async(request_id: int, response: requests.Response):
         if not is_valid_csv(response):
             logging.error(f"Invalid CSV response for request {request_id}")
             # Save the failed request to the database
-            sql_query = "INSERT INTO FailedRequests (request_id, info) VALUES (?, ?)"
+            sql_query = "REPLACE INTO FailedRequests (request_id, info) VALUES (?, ?)"
             query_params = (request_id, "Invalid CSV response")
         else:
+            logging.debug(f"Valid CSV response for request {request_id}")
             response_text = response.text
             sql_query = (
                 "REPLACE INTO Responses(request_id, response_text) VALUES (?, ?)"
@@ -316,13 +336,13 @@ def save_response_async(request_id: int, response: requests.Response):
     thread.start()
 
 
-def execute_and_save_requests(requests: list[dict], topic_id: int):
+def execute_and_save_requests(request_params: list[dict], topic_id: int):
     """Executes and saves the requests for the topic.
     :param requests (list): The requests.
     :param topic_id (int): The topic ID.
     """
     done_count = 0
-    total_count = len(requests)
+    total_count = len(request_params)
 
     with requests.Session() as session:
         session.get(
@@ -333,7 +353,7 @@ def execute_and_save_requests(requests: list[dict], topic_id: int):
             f"https://statistik.bra.se/solwebb/action/anmalda/urval/urval?menyid={topic_id}",
             verify=False,
         )
-        for request in requests:
+        for request in request_params:
             logging.info(
                 f"Executing request {done_count + 1}/{total_count} for topic {topic_id}"
             )
@@ -375,7 +395,10 @@ class BraScraper:
             with open(topics_path, "r", encoding="utf-8") as file:
                 return json.load(file)
         else:
-            return get_topics()
+            topics = get_topics()
+            with open(topics_path, "w", encoding="utf-8") as file:
+                json.dump(topics, file, ensure_ascii=False, indent=4)
+            return topics
 
     def _load_dimensions(self) -> dict:
         """Loads the dimensions from the JSON file.
@@ -406,6 +429,12 @@ class BraScraper:
         _reset_db()
         for topic_id in self.topic_ids:
             generate_requests(topic_id, self.dimensions[topic_id], self.row_limit)
+
+    def scrape_topic(self, topic_id: int):
+        """Retrieves, executes and saves pending requests for the topic.
+        Assumes that the requests have been populated."""
+        requests = get_pending_requests(topic_id)
+        execute_and_save_requests(requests, topic_id)
 
     def scrape_all(self):
         """Retrieves, executes and saves pending requests for all topics.
