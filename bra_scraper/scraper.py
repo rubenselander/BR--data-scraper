@@ -30,7 +30,7 @@ db_path = f"{save_folder_path}/requests.db"
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format="%(asctime)s - %(message)s",
+    format="%(asctime)s - %(message)s - %(levelname)s",
     filename="scraper.log",
     filemode="w",
 )
@@ -66,7 +66,7 @@ def init_db():
             CREATE TABLE IF NOT EXISTS Responses (
                 response_id INTEGER PRIMARY KEY AUTOINCREMENT,
                 request_id INTEGER NOT NULL,
-                response_text TEXT, -- CSV
+                response_text TEXT NOT NULL,
                 timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
                 FOREIGN KEY(request_id) REFERENCES Requests(request_id)
             )
@@ -259,36 +259,6 @@ def combine_and_deduplicate_csv(csv_strings, output_path):
             writer.writerow(row)
 
 
-def is_valid_csv(input, separator=";"):
-    # Check if the input is a non-empty string
-    if not isinstance(input, str):
-        try:
-            input_string = input.text
-        except Exception as e:
-            logging.error(f"Invalid input: {e}")
-            return False
-    else:
-        input_string = input
-
-    lines = input_string.strip().split("\n")
-
-    # Ensure there are at least two lines to check
-    if len(lines) < 2:
-        return False
-
-    # Check if the first two lines contain more than one separator and have equal numbers of separators
-    separator_count_first_line = lines[0].count(separator)
-    separator_count_second_line = lines[1].count(separator)
-
-    if (
-        separator_count_first_line > 0
-        and separator_count_first_line == separator_count_second_line
-    ):
-        return True
-    else:
-        return False
-
-
 def save_response_async(request_id: int, response: requests.Response):
     """Saves the response to the database asynchronously.
     :param request_id (int): The request ID.
@@ -296,35 +266,30 @@ def save_response_async(request_id: int, response: requests.Response):
     """
     logging.info(f"Saving response for request {request_id}")
     # logg the content of the response
-    logging.info(f"Response content: {response.text}")
+    # logging.info(f"Response content: {response.text}")
 
     def save_response(request_id: int, response: requests.Response):
-        sql_query = None
-        query_params = None
-        mark_as_done = False
-        if not is_valid_csv(response):
-            logging.error(f"Invalid CSV response for request {request_id}")
-            # Save the failed request to the database
-            sql_query = "REPLACE INTO FailedRequests (request_id, info) VALUES (?, ?)"
-            query_params = (request_id, "Invalid CSV response")
-        else:
-            logging.debug(f"Valid CSV response for request {request_id}")
+        """Saves the response to the database."""
+        response_text = None
+
+        try:
             response_text = response.text
-            sql_query = (
-                "REPLACE INTO Responses(request_id, response_text) VALUES (?, ?)"
-            )
-            query_params = (request_id, response_text)
-            mark_as_done = True
+        except Exception as e:
+            logging.error(f"Error getting response text: {e}")
+            return
 
         conn = sqlite3.connect(db_path)
         try:
             c = conn.cursor()
-            c.execute(sql_query, query_params)
-            if mark_as_done:
-                c.execute(
-                    "UPDATE Requests SET status = 'Done' WHERE request_id = ?",
-                    (request_id,),
-                )
+            c.execute(
+                "INSERT INTO Responses (request_id, response_text) VALUES (?, ?)",
+                (request_id, response_text),
+            )
+            # Update the status of the request to 'Done'
+            c.execute(
+                "UPDATE Requests SET status = 'Done' WHERE request_id = ?",
+                (request_id,),
+            )
             conn.commit()
         except Exception as e:
             logging.error(f"Error saving response: {e}")
