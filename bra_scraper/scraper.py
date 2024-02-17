@@ -198,7 +198,7 @@ def generate_requests(
         "crime": list(dimensions["crime"].keys()),
         "region": list(dimensions["region"].keys()),
         "period": list(dimensions["period"].keys()),
-        "measure": ["total", "antal_100k"],
+        "measure": ["antal", "antal_100k"],
     }
 
     request_configs = get_request_configs(variables, row_limit)

@@ -1,0 +1,2 @@
+2024-02-17 23:32:35,510 - Starting new HTTPS connection (1): statistik.bra.se:443
+2024-02-17 23:32:35,760 - https://statistik.bra.se:443 "GET /solwebb/action/start?menykatalogid=1 HTTP/1.1" 200 None
