@@ -187,3 +187,8 @@ data/bra/topic_31.csv
 data/backups/*
 data/tests/*
 bra.csv
+
+**scraper_log**
+scraper_log.txt
+**.log
+scraper.log

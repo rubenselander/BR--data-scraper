@@ -31,7 +31,7 @@ db_path = f"{save_folder_path}/requests.db"
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(message)s",
-    filename=f"{save_folder_path}/scraper_log.txt",
+    filename="scraper.log",
     filemode="w",
 )
 
